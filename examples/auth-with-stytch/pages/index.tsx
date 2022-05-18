@@ -15,11 +15,11 @@ import LoginEntryPoint from '../components/LoginEntryPoint'
 let REDIRECT_URL_BASE = ''
 
 if (process.env.NEXT_PUBLIC_VERCEL_URL?.includes('localhost')) {
-  REDIRECT_URL_BASE = 'https://ambitious-bay-01dda4210.1.azurestaticapps.net/'
+  REDIRECT_URL_BASE = 'https://ambitious-bay-01dda4210.1.azurestaticapps.net'
 } else if (process.env.NEXT_PUBLIC_VERCEL_URL !== undefined) {
-  REDIRECT_URL_BASE = `https://ambitious-bay-01dda4210.1.azurestaticapps.net/`
+  REDIRECT_URL_BASE = `https://ambitious-bay-01dda4210.1.azurestaticapps.net`
 } else {
-  REDIRECT_URL_BASE = 'https://ambitious-bay-01dda4210.1.azurestaticapps.net/'
+  REDIRECT_URL_BASE = 'https://ambitious-bay-01dda4210.1.azurestaticapps.net'
 }
 
 const stytchProps: StytchProps = {
