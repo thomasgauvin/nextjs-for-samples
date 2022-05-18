@@ -15,9 +15,15 @@ export async function handler(
 ) {
   if (req.method === 'GET') {
     const client = loadStytch()
-    const { token } = req.query
+    const { stytch_token_type, token } = req.query
     try {
-      const resp = await client.magicLinks.authenticate(token as string)
+      const resp
+      if(stytch_token_type == "oauth"){
+        resp = await client.oauth.authenticate(token as string)
+      }
+      else {
+        resp = await client.magicLinks.authenticate(token as string)
+      }
       // Set session
       req.session.destroy()
       req.session.set('user', {
