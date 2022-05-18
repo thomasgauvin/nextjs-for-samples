@@ -17,7 +17,7 @@ export async function handler(
     const client = loadStytch()
     const { stytch_token_type, token } = req.query
     try {
-      const resp
+      var resp
       if(stytch_token_type == "oauth"){
         resp = await client.oauth.authenticate(token as string)
       }
