@@ -20,6 +20,7 @@ export function setTokenCookie(res, token) {
 export function removeTokenCookie(res) {
   const cookie = serialize(TOKEN_NAME, 'a', {
     maxAge: -1,
+    expires: new Date(Date.now() - 1000),
     path: '/',
     sameSite: 'lax',
   })
