@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Yellow smoke for passport
 
 on:
   push:
