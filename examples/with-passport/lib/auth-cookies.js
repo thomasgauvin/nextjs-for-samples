@@ -19,7 +19,7 @@ export function setTokenCookie(res, token) {
 
 export function removeTokenCookie(res) {
   const cookie = serialize(TOKEN_NAME, 'dummy', {
-    maxAge: MAX_AGE,
+    maxAge: 1,
     path: '/'
   })
 
