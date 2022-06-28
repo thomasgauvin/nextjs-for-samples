@@ -21,6 +21,8 @@ export function removeTokenCookie(res) {
   const cookie = serialize(TOKEN_NAME, 'a', {
     maxAge: -1,
     expires: new Date(Date.now() - 1000),
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
     path: '/',
     sameSite: 'lax',
   })
