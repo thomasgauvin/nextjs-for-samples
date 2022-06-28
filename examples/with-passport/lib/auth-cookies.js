@@ -19,12 +19,8 @@ export function setTokenCookie(res, token) {
 
 export function removeTokenCookie(res) {
   const cookie = serialize(TOKEN_NAME, 'dummy', {
-    maxAge: -1,
-    expires: new Date(Date.now() - MAX_AGE * 1000),
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    path: '/',
-    sameSite: 'lax',
+    maxAge: MAX_AGE,
+    path: '/'
   })
 
   res.setHeader('Set-Cookie', cookie)
