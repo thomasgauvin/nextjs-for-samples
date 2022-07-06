@@ -15,16 +15,8 @@ export async function handler(
   if (req.method === 'POST') {
     
     try {
-      // Set session
-      req.session.destroy(function(err){
-         if(err){
-            console.log(err);
-         }else{
-             console.log("blah");
-             req.end();
-             res.redirect('/');
-         }
-      });
+       await req.session.destroy()
+       res.redirect('/')
     } catch (error) {
       const errorString = JSON.stringify(error)
       console.log(error)
