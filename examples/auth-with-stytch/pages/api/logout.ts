@@ -13,10 +13,18 @@ export async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === 'POST') {
+    
     try {
       // Set session
-      req.session.destroy()
-      res.redirect('/')
+      req.session.destroy(function(err){
+         if(err){
+            console.log(err);
+         }else{
+             console.log(session.email);
+             req.end();
+             res.redirect('/');
+         }
+      });
     } catch (error) {
       const errorString = JSON.stringify(error)
       console.log(error)
