@@ -20,7 +20,7 @@ export async function handler(
          if(err){
             console.log(err);
          }else{
-             console.log(session.email);
+             console.log("blah");
              req.end();
              res.redirect('/');
          }
