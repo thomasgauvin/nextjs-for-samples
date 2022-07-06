@@ -16,6 +16,7 @@ export async function handler(
     
     try {
        await req.session.destroy()
+       await req.session.save()
        res.redirect('/')
     } catch (error) {
       const errorString = JSON.stringify(error)
