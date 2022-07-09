@@ -17,9 +17,11 @@ function Profile({ user }) {
 
 export async function getServerSideProps({ req, res }) {
    const header = req.headers['x-ms-client-principal'];
+   console.log(header+" is the x-ms-client-principal")
    const encoded = Buffer.from(header, 'base64');
+   console.log(encoded+" is the encoded")
    const decoded = encoded.toString('ascii');
-
+   console.log(decoded+" is the decoded")
   if (!decoded) {
     res.writeHead(302, {
       Location: '/.auth/login/aad',
@@ -27,7 +29,7 @@ export async function getServerSideProps({ req, res }) {
     res.end()
     return
   }
-
+  console.log("json: "+JSON.parse(decoded))
   return { props: { user: { me: JSON.parse(decoded) } } }
 }
 
