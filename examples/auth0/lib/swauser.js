@@ -53,7 +53,7 @@ export function useFetchSwaUser({ required } = {}) {
         if (isMounted) {
           // When the user is not logged in but login is required
           if (required && !user) {
-            window.location.href = '/.auth/aad/login'
+            window.location.href = '/.auth/login/aad'
             return
           }
           setUser(user)
