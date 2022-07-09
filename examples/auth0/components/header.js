@@ -24,8 +24,18 @@ function Header({ user, loading }) {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/swaprofile">
+                    <a>Client-rendered SWA profile</a>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/advanced/ssr-profile">
                     <a>Server rendered profile (advanced)</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/advanced/ssr-swaprofile">
+                    <a>Server rendered SWA profile (advanced)</a>
                   </Link>
                 </li>
                 <li>
