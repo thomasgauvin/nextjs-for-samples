@@ -6,6 +6,5 @@ export default async function meswa(req, res) {
    console.log(encoded+" is the encoded")
    const decoded = encoded.toString('ascii');
    console.log(decoded+" is the decoded")
-   console.log("json: "+JSON.parse(decoded))
-  res.json({ me: JSON.parse(decoded) })
+  res.json({ me: decoded })
 }
