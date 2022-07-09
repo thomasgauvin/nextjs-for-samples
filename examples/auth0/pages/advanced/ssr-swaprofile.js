@@ -9,7 +9,7 @@ function Profile({ user }) {
 
       <div>
         <h3>Profile (server rendered)</h3>
-        <p>Details: {user.me}</p>
+        <p>Details: {user}</p>
       </div>
     </Layout>
   )
@@ -30,7 +30,7 @@ export async function getServerSideProps({ req, res }) {
     return
   }
   console.log("json: "+JSON.parse(decoded))
-  return { props: { user: { me: JSON.parse(decoded) } } }
+  return { props: { user: decoded } }
 }
 
 export default Profile
