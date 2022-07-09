@@ -16,6 +16,7 @@ function Profile({ user }) {
 }
 
 export async function getServerSideProps({ req, res }) {
+   console.log(req.headers);
    const header = req.headers['x-ms-client-principal'];
    console.log(header+" is the x-ms-client-principal")
    const encoded = Buffer.from(header, 'base64');
