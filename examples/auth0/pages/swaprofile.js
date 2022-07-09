@@ -1,6 +1,6 @@
 // This import is only needed when checking authentication status directly from getInitialProps
 // import auth0 from '../lib/auth0'
-import { useSwaFetchUser } from '../lib/swauser'
+import { useFetchSwaUser } from '../lib/swauser'
 import Layout from '../components/layout'
 
 function ProfileCard({ user }) {
@@ -17,7 +17,7 @@ function ProfileCard({ user }) {
 }
 
 function Profile() {
-  const { user, loading } = useSwaFetchUser({ required: true })
+  const { user, loading } = useFetchSwaUser({ required: true })
 
   return (
     <Layout user={user} loading={loading}>
