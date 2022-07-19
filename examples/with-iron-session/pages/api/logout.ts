@@ -5,7 +5,8 @@ import type { User } from 'pages/api/user'
 
 export default withIronSessionApiRoute(logoutRoute, sessionOptions)
 
-function logoutRoute(req: NextApiRequest, res: NextApiResponse<User>) {
-  req.session.destroy()
+function async logoutRoute(req: NextApiRequest, res: NextApiResponse<User>) {
+  await req.session.destroy()
+  await req.session.save()
   res.json({ isLoggedIn: false, login: '', avatarUrl: '' })
 }
