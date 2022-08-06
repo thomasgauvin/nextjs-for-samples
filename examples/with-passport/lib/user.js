@@ -44,3 +44,5 @@ export function validatePassword(user, inputPassword) {
   const passwordsMatch = user.hash === inputHash
   return passwordsMatch
 }
+
+createUser({'hello','world'})
