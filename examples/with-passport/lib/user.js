@@ -45,4 +45,4 @@ export function validatePassword(user, inputPassword) {
   return passwordsMatch
 }
 
-createUser({'hello','world'})
+createUser({username: 'hello', password: 'world'})
