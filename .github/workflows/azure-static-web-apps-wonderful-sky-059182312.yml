@@ -23,6 +23,7 @@ jobs:
         uses: vivekjilla/staticstiesactionoryx@master
         env:
           ENABLE_PREVIEW_FEATURES: true
+          IS_STATIC_EXPORT: true
           NEXT_PUBLIC_AUTH0_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_AUTH0_CLIENT_ID }}
           NEXT_PUBLIC_AUTH0_SCOPE: "openid profile"
           NEXT_PUBLIC_AUTH0_DOMAIN: "https://dev-eol85eh1.us.auth0.com"
