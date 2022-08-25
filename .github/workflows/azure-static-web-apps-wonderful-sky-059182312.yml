@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Auth0 private env
 
 on:
   push:
@@ -21,6 +21,19 @@ jobs:
       - name: Build And Deploy
         id: builddeploy
         uses: vivekjilla/staticstiesactionoryx@master
+        env:
+          ENABLE_PREVIEW_FEATURES: true
+          NEXT_PUBLIC_AUTH0_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_AUTH0_CLIENT_ID }}
+          NEXT_PUBLIC_AUTH0_SCOPE: "openid profile"
+          NEXT_PUBLIC_AUTH0_DOMAIN: "https://dev-eol85eh1.us.auth0.com"
+          NEXT_PUBLIC_BASE_URL: "https://lively-bush-0fd753d22.1.azurestaticappscanary.net"
+          NEXT_PUBLIC_REDIRECT_URI: "/api/callback"
+          NEXT_PUBLIC_POST_LOGOUT_REDIRECT_URI: "/"
+
+          # Secret environment variables only available to Node.js
+          AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
+          SESSION_COOKIE_SECRET: ${{ secrets.SESSION_COOKIE_SECRET }}
+          SESSION_COOKIE_LIFETIME: 7200
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_SKY_059182312 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
